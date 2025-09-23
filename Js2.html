@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="Info"></p>
+<body>
+    <Script>
+       var StudentName='Anamika'
+       let StudentAge="20"
+       let Grade;
+       let Address=null;
+       let Course="M.Sc(Ca & It)"
+       const isStudent= true;
+       let Student ={
+        name: "Anamika",
+        age: 20,
+        Course: "Msc (ca &it)"
+       };
+       let Subjects =["Html","Css","Javascript"];
+
+       document.getElementById("Info").innerHTML ="<b>Name:</b>"+ StudentName + "<br>" + "<b>Age:</b>" + StudentAge + "<br>" + "<b>Grade:</b>"+  Grade + "<br>" + "<b>Address:</b>"+ Address + "<br>" + "<b>Course:</b>"+ Course + "<br>" +
+        "<b>Is Student?:</b>"+ isStudent + "<br>" + "<b>Student Info:</b>" + Student + "<br>" + "<b>Subjects:</b>" + Subjects + "<br>"
+
+        document.write(typeof StudentAge + "<br>");
+        document.write(typeof StudentName + "<br>");
+        document.write(typeof Grade + "<br>");
+          document.write(typeof Address + "<br>");
+          document.write(typeof Course + "<br>");
+          document.write(typeof isStudent + "<br>");
+          document.write(typeof Student + "<br>");
+          document.write(typeof Subjects + "<br>");
+          
+    </Script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, quis?</p>
+    <button onclick="test()" id="hide">Hide</button>
+    <button  onclick="test1()">Show</button>
+    <button class="btn"  onclick="test2()">Hide</button>
+    <script>
+    
+     let a=document.querySelector("#hide")
+       let p=document.querySelector('p')
+     let btn= document.querySelector(".btn")
+
+
+
+    function test(){
+    p.style.display = "none"
+}
+
+      function test1(){
+        p.style.display="block"
+     }
+     function test2(){
+        if(p.style.display =="none"){
+           btn.innerHTML = "Hide"
+            p.style.display = "block"
+        }
+        else{
+            btn.innerHTML = "Show"
+               p.style.display = "none"
+        }
+     }
+    </script>
+</body>
+</html>
