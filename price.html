@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+   <select name="" id="option" onchange="test()">
+    <option value="1" >1</option>
+    <option value="2" >2</option>
+    <option value="3" >3</option>
+   </select>
+   <p >Total Price: <span id="price">300</span></p>
+</body>
+<script>
+    function test(){
+        let b=document.querySelector("#option");
+       
+         let Total= Number(option.value) * 300
+
+    document.getElementById("price").innerHTML = Total;
+    }
+    
+</script>
+</html>
