@@ -33,7 +33,7 @@
 
 
             editbtn.onclick=function (){
-                input.value=div.testContent
+                input.value=div.textContent
             }
             deleteBtn.onclick= function(){
                 list.removeChild(li)
@@ -42,7 +42,7 @@
             li.appendChild(div)
             li.appendChild(editbtn)
             li.appendChild(deleteBtn)
-            li.appendChild(li)
+            list.appendChild(li)
 
 
             input.value=""

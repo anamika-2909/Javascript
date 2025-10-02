@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3 btan dabavo red green blue je batan dabavo e color no para thai jai -->
+     
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, ut.</p>
+    <button id="red" onclick="test()">Red</button>
+      <button onclick="test1()" id="Green">Green</button>
+    <button class="btn" onclick="test2()">Blue</button>
+
+    <script>
+        let p=document.querySelector('p')
+        let a= document.querySelector('#red')
+         let b= document.querySelector('#Green')
+          let c= document.querySelector('.btn')
+          
+
+          function test(){
+    p.style.color = "red"
+}
+  function test1(){
+    p.style.color = "green"
+}
+  function test2(){
+    p.style.color = "blue"
+}
+    </script>
+</body>
+</html>
