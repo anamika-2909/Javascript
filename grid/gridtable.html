@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS Grid Layout</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for grid items */
+        .g-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 0.5rem; /* rounded corners */
+            padding: 1rem;
+        }
+
+       
+        .c1 { 
+            background-color: #9B59B6; 
+        
+         }
+        .c2 {
+             background-color: #E74C3C; 
+         }
+        .c3 { 
+            background-color: #3498DB;
+             }
+        .c4 { 
+            background-color: #1ABC9C; 
+         }
+        .c5 { 
+            background-color: #9B59B6;
+              }
+
+        /* Default: Mobile View */
+        .d-view, .t-view {
+            display: none; /* Hide desktop and tablet by default */
+        }
+        .m-view {
+            display: block; /* Show mobile by default */
+        }
+
+        /* Mobile Grid Item Placement */
+        .m-view .grid {
+            grid-template-columns: 1fr; /* Explicitly 1 column for mobile */
+        }
+        /* No specific grid-column/row needed for mobile as items naturally stack */
+
+
+        /* Tablet View (min-width: 768px) */
+        @media (min-width: 768px) {
+            .m-view, .d-view {
+                display: none;
+            }
+            .t-view {
+                display: block;
+            }
+
+            /* Tablet Grid Item Placement */
+            .t-view .grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+                grid-auto-rows: minmax(100px, auto); /* Ensure rows have a minimum height */
+            }
+            .t-view .c1 {
+                grid-column: 1 / span 2; /* Item 1 spans 2 columns */
+                grid-row: 1;
+            }
+            .t-view .c2 {
+                grid-column: 1; /* Item 2 starts at column 1 */
+                grid-row: 2;
+            }
+            .t-view .c3 {
+                grid-column: 2; /* Item 3 starts at column 2 */
+                grid-row: 2 / span 2; /* Item 3 spans 2 rows, starting at row 2 */
+            }
+            .t-view .c4 {
+                grid-column: 1; /* Item 4 starts at column 1 */
+                grid-row: 3;
+            }
+            .t-view .c5 {
+                grid-column: 1 / span 2; /* Item 5 spans 2 columns */
+                grid-row: 4;
+            }
+        }
+
+        /* Desktop View (min-width: 1024px) */
+        @media (min-width: 1024px) {
+            .m-view, .t-view {
+                display: none;
+            }
+            .d-view {
+                display: block;
+            }
+
+            /* Desktop Grid Item Placement */
+            .d-view .grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+                grid-auto-rows: minmax(100px, auto); /* Ensure rows have a minimum height */
+            }
+            .d-view .c1 {
+                grid-column: 1 / span 2; /* Item 1 starts at column 1, spans 2 */
+                grid-row: 1;
+            }
+            .d-view .c2 {
+                grid-column: 3; /* Item 2 starts at column 3 */
+                grid-row: 1;
+            }
+            .d-view .c3 {
+                grid-column: 4; /* Item 3 starts at column 4 */
+                grid-row: 1 / span 2; /* Item 3 spans 2 rows, starting at row 1 */
+            }
+            .d-view .c4 {
+                grid-column: 1; /* Item 4 starts at column 1 */
+                grid-row: 2;
+            }
+            .d-view .c5 {
+                grid-column: 2 / span 2; /* Item 5 starts at column 2, spans 2 */
+                grid-row: 2;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100 p-4">
+
+    <!-- Desktop View -->
+    <div class="d-view mb-8">
+        <h2 class="text-2xl font-bold text-center mb-4">Desktop</h2>
+        <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold text-center mb-6">CSS Grid</h1>
+            <div class="grid gap-4"> <!-- Removed col-span/row-span from HTML -->
+                <div class="g-item c1">1</div>
+                <div class="g-item c2">2</div>
+                <div class="g-item c3">3</div>
+                <div class="g-item c4">4</div>
+                <div class="g-item c5">5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tablet View -->
+    <div class="t-view mb-8">
+        <h2 class="text-2xl font-bold text-center mb-4">Tablet</h2>
+        <div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold text-center mb-6">CSS Grid</h1>
+            <div class="grid gap-4"> <!-- Removed col-span/row-span from HTML -->
+                <div class="g-item c1">1</div>
+                <div class="g-item c2">2</div>
+                <div class="g-item c3">3</div>
+                <div class="g-item c4">4</div>
+                <div class="g-item c5">5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile View -->
+    <div class="m-view">
+        <h2 class="text-2xl font-bold text-center mb-4">Mobile</h2>
+        <div class="max-w-sm mx-auto p-4 bg-white rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold text-center mb-4">CSS Grid</h1>
+            <div class="grid gap-4"> <!-- Removed col-span/row-span from HTML -->
+                <div class="g-item c1">1</div>
+                <div class="g-item c2">2</div>
+                <div class="g-item c3">3</div>
+                <div class="g-item c4">4</div>
+                <div class="g-item c5">5</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

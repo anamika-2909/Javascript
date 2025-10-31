@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* second grid  */
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,200px);
+        place-content: center;
+        width: 40%;
+        margin: 100px auto;
+        gap:10px;
+        color: white;
+    }
+    .a11{
+        grid-row-start: span 4;
+        /* width: 100px; */
+        background-color: purple;
+        height: 100px;
+       text-align: center;
+      padding: 30px;
+        border-radius: 5px;
+    }
+    .a12{
+        grid-column: span 5;
+        width: 80px;
+        background-color: orangered;
+        height: 90px;
+        text-align: center;
+        padding: 30px;
+        border-radius: 5px;
+       gap: 0;
+    }
+    .a13{
+        grid-row: span 19;
+        background-color: slateblue;
+        width: 80px;
+        text-align: center;
+        padding: 30px;
+        border-radius: 5px;
+        margin-left: 100px;
+    }
+    .a14{
+        grid-column: span 5;
+        width: 80px;
+        background-color:darkcyan;
+        height: 90px;
+        text-align: center;
+        padding: 30px;
+        border-radius: 5px;
+        gap: 0;
+       
+    }
+    .a15{
+        grid-row-start: span 1;
+        /* width: 100px; */
+        background-color:rgb(214, 23, 55);
+        height: 100px;
+       text-align: center;
+      padding: 30px;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    
+     <div class="grid">
+        <div class="div a11">1</div>
+        <div class="div a12">2</div>
+        <div class="div a13">3</div>
+        <div class="div a14">4</div>
+        <div class="div a15">5</div>
+       
+    </div>
+</body>
+</html>
