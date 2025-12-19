@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>chek</button>
+    <ul></ul>
+
+    <script>
+        let input=document.querySelector("input")
+        let btn=document.querySelector("button")
+        let ul=document.querySelector("ul")
+
+        btn.addEventListener("click",function(){
+            if(input.value===""){
+                alert("input must be required")
+            }
+
+            let li=document.createElement("li")
+             let span=document.createElement("span")
+             span.innerHTML=input.value
+
+             let edit=document.createElement("button")
+             edit.textContent="Edit"
+
+             let delbtn=document.createElement("button")
+             delbtn.textContent="Delete"
+
+             li.append(span,edit,delbtn)
+             ul.append(li)
+              input.value=""
+             
+
+             edit.addEventListener("click",function(){
+                newtext=prompt("enter your value",span.innerHTML)
+                span.innerHTML=newtext
+             })
+
+             delbtn.addEventListener("click",function(){
+                ul.removeChild(li)
+             })
+        })
+       
+    </script>
+</body>
+</html>
